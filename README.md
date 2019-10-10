@@ -86,7 +86,7 @@ def test_func(a,b):
     return 'Return {} and {}'.format(str(a),str(b))
 ```
 
-#### Step 4. You'll be notified by [@FreshToasterBot](http://t.me/freshtoasterbot) when your code finishes executing.
+#### Step 4. You'll be notified by when your code finishes executing.
 <img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response.jpg" alt="Sample Response" width="380" height="100">
 
 
