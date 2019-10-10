@@ -67,14 +67,14 @@ pip install pytoaster
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-#### Step 1. Get your telegram ID from [@FreshToasterBot](http://t.me/freshtoasterbot) on Telegram  
-<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/start_convo.jpg" alt="Start Convo" width="350" height="100">
+#### Step 1. Get your Slack webhook url ID from Slack app
+
 
 #### Step 2. Configure toaster using `set_id()`.
 ```python
-from toaster import toast, set_id
+from toaster import toast, set_incoming_webhook
 
-set_id(<your_telegram_id>)
+set_incoming_webhook(<your incoming webhook url>)
 ```  
 *Note*: You'll only have to do this once, it'll then be saved to `config.txt` in toaster's installation path.
 
