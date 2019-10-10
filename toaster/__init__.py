@@ -1,14 +1,17 @@
 import os, requests
 import datetime
+import json
 
-from toaster.helper import get_config_path, load_default_id, format_time
+from toaster.helper import get_config_path, load_config, format_time
 
-USERID = load_default_id()
-API_ENDPOINT = 'https://us-central1-toaster-253815.cloudfunctions.net/toaster_message'
+CONFIG = load_config()
 
-def toast(method):
-    if USERID == '':
-        raise UnboundLocalError('You have not configured your Telegram ID. Run set_id(<telegram id>) first.')
+def telegram_toast(method):
+    API_ENDPOINT = 'https://us-central1-toaster-253815.cloudfunctions.net/toaster_message'
+
+    # Check for telegram config
+    if 'telegram' not in CONFIG.keys():
+        raise UnboundLocalError("You have not configured your Telegram ID. Run set_config(<telegram id>, 'telegram') first.")
 
     def insert_toast(*args, **kw):      
         try:
@@ -21,7 +24,7 @@ def toast(method):
                 method.__name__, start.strftime("%Y-%m-%d %H:%M:%S"), end.strftime("%Y-%m-%d %H:%M:%S"), format_time(diff)
             )
             data = {
-                'userid':USERID,
+                'userid':CONFIG['telegram'],
                 'msg':msg
             }
 
@@ -32,7 +35,7 @@ def toast(method):
             msg = '⚠️ An error has occurred with function <i>{}</i>\n<b>Error message:</b> {}'.format(method.__name__, str(e))
             print('Error caught:',e)
             data = {
-                'userid':USERID,
+                'userid':CONFIG['telegram'],
                 'msg':msg
             }
             # Send Telegram Message
@@ -40,16 +43,27 @@ def toast(method):
 
     return insert_toast
 
-def set_id(userid):
-    userid = str(userid)
-    if userid.isnumeric():
-        config_path = get_config_path()
-        with open(config_path,"w") as config_file:
-            config_file.write(userid)
-        global USERID
-        USERID = userid
+def set_config(config_str, notification_channel):
+    config_str = str(config_str)
+    notification_channel = str(notification_channel)
+
+    # Check for valid config_str
+    if notification_channel == 'telegram':
+        if not config_str.isnumeric():
+            raise TypeError('Your Telegram ID should be all numbers.')
+
+    elif notification_channel == 'slack':
+        if 'slack.com' not in config_str:
+            raise ValueError('Ensure that you enter a valid incoming webhook')
     else:
-        raise TypeError('Your Telegram ID should be all numbers.')
+        raise ValueError('Invalid method, enter either `telegram` or `slack`')
+    
+    # Load and save to config.json
+    global CONFIG
+    CONFIG[notification_channel] = config_str
+    config_path = get_config_path()
+    with open(config_path,"w") as config_file:
+        json.dump(CONFIG, config_file)
 
 
 
