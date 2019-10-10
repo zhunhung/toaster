@@ -53,11 +53,11 @@ To set up Toaster, simply follow the installation and usage example.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* Telegram account (Create one if you do not have it)
+* Slack WEBHOOK URL (Create one if you do not have it)
 * Python 3
 
 ### Installation
- 
+
 1. Install via pip
 ```sh
 pip install pytoaster
@@ -86,7 +86,7 @@ def test_func(a,b):
     return 'Return {} and {}'.format(str(a),str(b))
 ```
 
-#### Step 4. You'll be notified by [@FreshToasterBot](http://t.me/freshtoasterbot) when your code finishes executing. 
+#### Step 4. You'll be notified by [@FreshToasterBot](http://t.me/freshtoasterbot) when your code finishes executing.
 <img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response.jpg" alt="Sample Response" width="380" height="100">
 
 
