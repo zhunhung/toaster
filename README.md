@@ -25,7 +25,7 @@
   <h3 align="center">Toaster</h3>
 
   <p align="center">
-    A simple python library that sends you a message on Telegram when your code finished running or encountered an error.
+    A simple python library that sends you a message on your preferred channel when your code finished running or encountered an error.
     <br />
   </p>
 </p>
@@ -40,6 +40,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
+* [Frequently Asked Questions](#frequently-asked-questions)
 * [Contributing](#contributing)
 * [License](#license)
 * [Acknowledgements](#acknowledgements)
@@ -53,7 +54,7 @@ To set up Toaster, simply follow the installation and usage example.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* Slack WEBHOOK URL (Create one if you do not have it)
+* Preferred notification channel (Telegram account/Slack Webhook URL)
 * Python 3
 
 ### Installation
@@ -67,27 +68,45 @@ pip install pytoaster
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-#### Step 1. Get your Slack webhook url ID from Slack app
-
-
-#### Step 2. Configure toaster using `set_id()`.
+#### Step 1. Import methods and configure toaster using `set_config()`.
 ```python
-from toaster import toast, set_incoming_webhook
+from toaster import telegram_toast, slack_toast, set_config
 
-set_incoming_webhook(<your incoming webhook url>)
+# for telegram notification
+set_config(config_str=<your_telegram_id>, notification_channel='telegram')
+
+# for slack notification
+set_config(config_str=<incoming_webhook>, notification_channel='slack')
 ```  
-*Note*: You'll only have to do this once, it'll then be saved to `config.txt` in toaster's installation path.
+*Note*: You'll only have to do this once, it'll then be saved to `config.json` in toaster's installation path.
 
-#### Step 3. Add `@toast` above functions that you want to be notified upon completion.
+#### Step 2. Add `@(channeltype)_toast` above functions that you want to be notified upon completion.
 ```python
-@toast
+# telegram example
+@telegram_toast
+def test_func(a,b):
+    time.sleep(5)
+    return 'Return {} and {}'.format(str(a),str(b))
+
+# slack example
+@slack_toast
 def test_func(a,b):
     time.sleep(5)
     return 'Return {} and {}'.format(str(a),str(b))
 ```
 
-#### Step 4. You'll be notified by when your code finishes executing.
+#### Step 3. You'll be notified by according to your preferred channel when your code finishes executing.  
+##### - Telegram Example: Notification by [@FreshToasterBot](http://t.me/freshtoasterbot)
 <img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response.jpg" alt="Sample Response" width="380" height="100">
+
+##### - Slack Example:
+
+<!-- FAQ -->
+## Frequently Asked Questions
+
+#### 1. How do I find my Telegram ID?  
+Get your telegram ID from [@FreshToasterBot](http://t.me/freshtoasterbot) on Telegram  
+<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/start_convo.jpg" alt="Start Convo" width="350" height="100">
 
 
 <!-- CONTRIBUTING -->

@@ -13,6 +13,10 @@ def telegram_toast(method):
     if 'telegram' not in CONFIG.keys():
         raise UnboundLocalError("You have not configured your Telegram ID. Run set_config(<telegram id>, 'telegram') first.")
 
+    # Check for telegram config
+    if 'telegram' not in CONFIG.keys():
+        raise UnboundLocalError("You have not configured your Telegram ID. Run set_config(<telegram id>, 'telegram') first.")
+
     def insert_toast(*args, **kw):
         try:
             start = datetime.datetime.now()
@@ -43,6 +47,7 @@ def telegram_toast(method):
 
     return insert_toast
 
+
 def slack_toast(method):
     # Check for telegram config
     if 'slack' not in CONFIG.keys():
@@ -64,7 +69,7 @@ def slack_toast(method):
 
             res = requests.post(url = CONFIG['slack'], data = json.dumps(data), headers={'Content-Type': "application/json"})
             return result
-
+          
         except Exception as e:
             msg = '⚠️ An error has occurred with function *Error message:* {}'.format(method.__name__, str(e))
             print('Error caught:',e)
