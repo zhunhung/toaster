@@ -99,7 +99,7 @@ def test_func(a,b):
 <img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response.jpg" alt="Telegram Sample Response" width="380" height="100">
 
 ##### - Slack Example:
-<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response_slack.jpg" alt="Slack ample Response" width="380" height="100">
+<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/slack_sample_response.jpg" alt="Slack Sample Response" width="380" height="100">
 
 <!-- FAQ -->
 ## Frequently Asked Questions
@@ -109,8 +109,8 @@ Get your telegram ID from [@FreshToasterBot](http://t.me/freshtoasterbot) on Tel
 <img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/start_convo.jpg" alt="Start Convo" width="350" height="100">  
 
 #### 2. How do I setup my Slack Webhook?  
-Follow the [official instructions](https://slack.com/intl/en-sg/help/articles/115005265063-incoming-webhooks-for-slack) from Slack
-<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/Setup_Webhook.jpg" alt="Slack Instructions" width="350" height="100">
+Follow the [official instructions](https://slack.com/intl/en-sg/help/articles/115005265063-incoming-webhooks-for-slack) from Slack  
+<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/webhook_setup.jpg" alt="Slack Instructions" width="350" height="200">
 
 
 <!-- CONTRIBUTING -->
