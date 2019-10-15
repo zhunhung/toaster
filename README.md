@@ -64,7 +64,6 @@ This is an example of how to list things you need to use the software and how to
 pip install pytoaster
 ```
 
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -97,16 +96,21 @@ def test_func(a,b):
 
 #### Step 3. You'll be notified by according to your preferred channel when your code finishes executing.  
 ##### - Telegram Example: Notification by [@FreshToasterBot](http://t.me/freshtoasterbot)
-<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response.jpg" alt="Sample Response" width="380" height="100">
+<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response.jpg" alt="Telegram Sample Response" width="380" height="100">
 
 ##### - Slack Example:
+<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/sample_response_slack.jpg" alt="Slack ample Response" width="380" height="100">
 
 <!-- FAQ -->
 ## Frequently Asked Questions
 
 #### 1. How do I find my Telegram ID?  
 Get your telegram ID from [@FreshToasterBot](http://t.me/freshtoasterbot) on Telegram  
-<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/start_convo.jpg" alt="Start Convo" width="350" height="100">
+<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/start_convo.jpg" alt="Start Convo" width="350" height="100">  
+
+#### 2. How do I setup my Slack Webhook?  
+Follow the [official instructions](https://slack.com/intl/en-sg/help/articles/115005265063-incoming-webhooks-for-slack) from Slack
+<img src="https://raw.githubusercontent.com/zhunhung/toaster/master/images/Setup_Webhook.jpg" alt="Slack Instructions" width="350" height="100">
 
 
 <!-- CONTRIBUTING -->

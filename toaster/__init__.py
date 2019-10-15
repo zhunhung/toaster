@@ -13,10 +13,6 @@ def telegram_toast(method):
     if 'telegram' not in CONFIG.keys():
         raise UnboundLocalError("You have not configured your Telegram ID. Run set_config(<telegram id>, 'telegram') first.")
 
-    # Check for telegram config
-    if 'telegram' not in CONFIG.keys():
-        raise UnboundLocalError("You have not configured your Telegram ID. Run set_config(<telegram id>, 'telegram') first.")
-
     def insert_toast(*args, **kw):
         try:
             start = datetime.datetime.now()
