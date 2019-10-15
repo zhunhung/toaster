@@ -54,11 +54,11 @@ To set up Toaster, simply follow the installation and usage example.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* Preferred notification channel (Telegram account/Slack)
+* Preferred notification channel (Telegram account/Slack Webhook URL)
 * Python 3
 
 ### Installation
- 
+
 1. Install via pip
 ```sh
 pip install pytoaster
