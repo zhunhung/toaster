@@ -134,8 +134,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* Gal Shir for his cute toaster design [https://galshir.com/](https://galshir.com/)
-
+* Gal Shir for his cute toaster design [https://galshir.com/](https://galshir.com/)  
+* Yuval for his contribution to integrating slack [https://github.com/GuitaristForEver](https://github.com/GuitaristForEver)  
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
